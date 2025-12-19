@@ -1,4 +1,4 @@
-// Version client connectée au backend Node.js / MySQL
+// Version client connectée au backend 
 // Configuration du système solaire
 const planetsData = [
   { name: 'Soleil', radius: 5, distance: 0, color: 0xffff00, speed: 0, texture: null },
@@ -697,4 +697,5 @@ function createCustomPlanet(planetData) {
 
 // Démarrer l'application
 init();
+
 
