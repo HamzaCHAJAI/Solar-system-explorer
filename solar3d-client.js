@@ -12,7 +12,7 @@ const planetsData = [
   { name: 'Neptune', radius: 0.8, distance: 42, color: 0x4b70dd, speed: 0.001 }
 ];
 
-// Planètes personnalisées chargées depuis le backend (MySQL)
+// Planètes personnalisées chargées depuis le backend 
 let customPlanets = [];
 let db = null; 
 
@@ -24,8 +24,6 @@ let showOrbits = true;
 let showLabels = true;
 let rotationSpeed = 1;
 let nasaData = {};
-
-// --- Fonctions utilitaires pour communiquer avec l'API backend / MySQL ---
 
 // Sauvegarder une planète dans MySQL via l'API
 async function savePlanetToServer(planetData) {
@@ -627,21 +625,20 @@ async function loadCustomPlanets() {
 
 // Créer une planète personnalisée
 function createCustomPlanet(planetData) {
-  // Déterminer la couleur en fonction du type
-  let color = 0x888888; // Couleur par défaut
+  let color = 0x888888; 
   switch(planetData.type) {
     case 'rocheuse':
-      color = 0x8c7853; // Marron/beige
+      color = 0x8c7853; 
       break;
     case 'gazeuse':
-      color = 0xd8ca9d; // Jaune pâle
+      color = 0xd8ca9d; 
       break;
     case 'oceanique':
-      color = 0x4b70dd; // Bleu
+      color = 0x4b70dd;
       break;
   }
 
-  // Ajuster la vitesse en fonction de la distance (plus loin = plus lent)
+  // Ajuster la vitesse en fonction de la distance
   const speed = 0.01 / (planetData.distance / 10);
 
   const geometry = new THREE.SphereGeometry(planetData.size, 32, 32);
@@ -694,8 +691,7 @@ function createCustomPlanet(planetData) {
   scene.add(planet);
   planets.push(planet);
 }
-
-// Démarrer l'application
 init();
+
 
 
