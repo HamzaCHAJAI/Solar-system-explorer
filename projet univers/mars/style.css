@@ -1,0 +1,250 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-image: url("images/mars/backgroundmars.png");
+    background-size: 100% 150%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.topPage {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.planet {
+    position: absolute;
+    width: 25%;
+    height: auto;
+    aspect-ratio: 1/1;
+    left: -1%;
+    top: -100%;
+    transform: rotate(5deg);
+}
+
+.title_planet {
+    position: absolute;    
+    top: 50%;              
+    left: 50%;             
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+.title{
+    width: 80%;
+    height: auto;
+}
+
+.select_planet_and_home{
+    position: absolute;
+    left: 83%;
+    top: 3%;
+    width: 18%;
+    display: flex;
+    align-items: center;
+    gap: 40%;
+}
+.select_planet{
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list_planet {
+        position: relative;
+    }
+
+.planet_dropdown {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #A35038 0%, #C97860 100%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+}
+
+.planet_dropdown:hover {
+    background: linear-gradient(135deg, #C97860 0%, #A35038 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.planet_dropdown:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.4);
+}
+
+.planet_dropdown option {
+    background: #A35038;
+    color: white;
+}
+
+.go_to_the_planet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    width: auto;
+}
+
+.title_select_planet {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 2% ;
+}
+
+.main_bloc_and_buttons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+
+.button_back {
+    width: 12%;
+    height: 10%;
+}
+
+.button_next {
+    width: 14%;
+    height: 10%;
+}
+
+
+.main_bloc {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    height: 65%;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid rgba(147, 147, 147, 0.35);
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: auto;
+    position: relative;
+    top : 5%;
+    padding-bottom: 2%;
+}
+
+.title_main_bloc{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 2%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.main_text_and_picture{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    height: 80%;
+}
+
+.main_text {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    margin-top: 9%;
+}
+
+.satellite_picture {
+    position: absolute;
+    width: 15%;
+    height: 30%;
+    aspect-ratio: 1/1;
+    top: 2%;
+}
+
+.rover_picture {
+    position: absolute;
+    width: 18%;
+    height: 36%;
+    aspect-ratio: 1/1;
+    right: 5%;
+    top: 2%;
+    transform: rotate(5deg);
+}
+
+.satellite_picture_2 {
+    position: absolute;
+    width: 7%;
+    height: auto;
+    aspect-ratio: 1/1;
+    top: 2%;
+    left: 14%;
+}
+
+.nav_button_left {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 0;
+    width: 12%;
+    height: 10%;
+}
+
+.nav_button_right {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 0;
+    width: 14%;
+    height: 10%;
+}
+
+.button_back {
+    width: 100%;
+    height: 100%;
+}
+
+.button_next {
+    width: 100%;
+    height: 100%;
+}
+
+.button_home {
+    width: 25%;
+    height: auto;
+    cursor: pointer;
+}
+
+.nav_button_home {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 0;
+    width: 12%;
+    height: 9%;
+}
