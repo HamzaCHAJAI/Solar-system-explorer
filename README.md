@@ -60,6 +60,7 @@ npm run dev
 
 ## Auteur
 
-Hamza Chajai et Julien Ledouble
+Hamza Chajai, Julien Ledouble et Dylan HOUNDOLO
+
 
 
