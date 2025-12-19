@@ -1,16 +1,12 @@
--- Script SQL pour phpMyAdmin
--- Ce fichier crée la base de données et la table utilisées par l'application Node.js
--- Vous pouvez l'importer directement dans phpMyAdmin.
 
--- 1) Créer la base de données (si elle n'existe pas déjà)
+-- 1) Créer la base de données 
 CREATE DATABASE IF NOT EXISTS `solar_system`
   DEFAULT CHARACTER SET utf8mb4
   COLLATE utf8mb4_general_ci;
 
--- 2) Utiliser cette base
 USE `solar_system`;
 
--- 3) Créer la table `planets`
+--  Créations  la table `planets`
 DROP TABLE IF EXISTS `planets`;
 
 CREATE TABLE `planets` (
@@ -26,5 +22,6 @@ CREATE TABLE `planets` (
   `createdAt` DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 
