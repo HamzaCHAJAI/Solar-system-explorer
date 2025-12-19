@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Système Solaire 3D | Solar System Explorer</title>
+  </head>
+  <body class="solar3d-page">
+    <div id="canvas-container"></div>
+
+    <div class="controls">
+      <h2>Control</h2>
+      <button id="resetView">Reset View</button>
+      <button id="toggleOrbits">Toggle Orbits</button>
+      <button id="toggleLabels">Show/Hide Labels</button>
+      <button id="addPlanetBtn">Add Planet</button>
+      <button id="deleteAllPlanetsBtn" class="btn-danger">
+        Remove All Planets
+      </button>
+      <div class="speed-control">
+        <label>Rotation Speed: <span id="speedValue">1x</span></label>
+        <input
+          type="range"
+          id="speedControl"
+          min="0"
+          max="5"
+          step="0.1"
+          value="1"
+        />
+      </div>
+    </div>
+
+    <div class="info-panel" id="infoPanel">
+      <h3 id="planetName"></h3>
+      <p id="planetInfo"></p>
+      <img id="planetImage" src="" alt="" />
+      <div id="planetActions" style="margin-top: 10px; display: none">
+        <button id="deletePlanetBtn" class="btn-danger-small">
+          deleteAllPlanetsBtn
+        </button>
+      </div>
+      <button onclick="closeInfoPanel()" style="margin-top: 10px">close</button>
+    </div>
+
+    <div class="navigation">
+      <a href="index.html">Homepage</a>
+      <a href="solar3d.html">3D Système</a>
+      <a href="planets-list.html">planet List</a>
+    </div>
+
+    <div class="loading" id="loading">Loading Solar System...</div>
+
+    <!-- Modal pour ajouter une planète -->
+    <div id="planetModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Add New Planet</h2>
+        <form id="planetForm">
+          <div class="form-group">
+            <label for="pseudo">Username</label>
+            <input type="text" id="pseudo" name="pseudo" required />
+          </div>
+
+          <div class="form-group">
+            <label for="planetName">planet name:</label>
+            <input type="text" id="planetName" name="planetName" required />
+          </div>
+
+          <div class="form-group">
+            <label>type of the planet</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="type" value="rocheuse" required />
+                <span>Rocheuse</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="type" value="gazeuse" required />
+                <span>Gazeuse</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="type" value="oceanique" required />
+                <span>Océanique</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="size">Taille (unités relatives):</label>
+            <input
+              type="number"
+              id="size"
+              name="size"
+              step="0.1"
+              min="0.1"
+              max="10"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="distance">Distance à l'étoile (unités):</label>
+            <input
+              type="number"
+              id="distance"
+              name="distance"
+              step="0.1"
+              min="1"
+              max="100"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="temperature">Température (°C):</label>
+            <input
+              type="number"
+              id="temperature"
+              name="temperature"
+              step="1"
+              min="-273"
+              max="10000"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Atmosphère:</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="atmosphere" value="oxygene" />
+                <span>Oxygène</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="atmosphere" value="azote" />
+                <span>Azote</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="atmosphere" value="co2" />
+                <span>CO2</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="atmosphere" value="methane" />
+                <span>Méthane</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="hasWater" name="hasWater" />
+              <span>Présence d'eau</span>
+            </label>
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" class="btn-save">Sauvegarder</button>
+            <button type="button" class="btn-cancel" id="cancelBtn">
+              Annuler
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="solar3d-client.js"></script>
+  </body>
+</html>

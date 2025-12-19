@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <title>Solar System Planets | Solar System Explorer</title>
+</head>
+<body class="planets-list-page">
+  <nav class="top-navigation">
+    <button class="nav-link active" data-filter="solar" id="btnSolar">
+      <i class="fa fa-globe" aria-hidden="true"></i>
+      Solar System
+    </button>
+    <button class="nav-link" data-filter="custom" id="btnCustom">
+      <i class="fa fa-rocket" aria-hidden="true"></i>
+      Added Planets
+    </button>
+  </nav>
+
+  <div class="page-header">
+    <h1 id="pageTitle">Solar System Planets</h1>
+  </div>
+
+  <div class="planets-container" id="planetsContainer">
+    <!-- Cards will be generated dynamically by JavaScript -->
+  </div>
+
+  <div class="loading" id="loading">Loading planets...</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="planets-list.js"></script>
+</body>
+</html>
